@@ -61,7 +61,10 @@ Convert the hex number B to decimal.
 Answer:B in hex = 11 in decimal
 
 If reading the byte 0x21 as a number, what decimal number would it mean?
-Answer:
+Answer:0x21 = hex 21 → base 16
+2 × 16 = 32
+1 × 1 = 1
+Add: 32 + 1 = 33
 
 If reading the byte 0x21 as an ASCII character, what character would it mean?
 Answer:
