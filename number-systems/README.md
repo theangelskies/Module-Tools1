@@ -42,7 +42,13 @@ Convert the decimal number 14 to hex.
 Answer:hexadecimal (hex) uses 16 symbols: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, A, B, C, D, E, F therefore 14 in decimal = E in hex
 
 Convert the decimal number 386 to hex.
-Answer:
+Answer:Divide by 16 repeatedly (because hex is base 16).
+386 ÷ 16 = 24 remainder 2 → the last digit is 2
+24 ÷ 16 = 1 remainder 8 → next digit is 8
+1 ÷ 16 = 0 remainder 1 → first digit is 1
+Write the remainders from top to bottom:
+
+1 → 8 → 2 = 182
 
 Convert the hex number 386 to decimal.
 Answer:
