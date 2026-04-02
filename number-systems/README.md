@@ -70,7 +70,8 @@ If reading the byte 0x21 as an ASCII character, what character would it mean?
 Answer: !
 
 If reading the byte 0x21 as a greyscale colour, as described in "Approaches for Representing Colors and Images", what colour would it mean?
-Answer:
+Answer:Greyscale ranges 0x00 (black) → 0xFF (white)
+0x21 is low value, so it’s dark grey
 
 If reading the bytes 0xAA00FF as an RGB colour, as described in "Approaches for Representing Colors and Images", what colour would it mean?
 Answer:
