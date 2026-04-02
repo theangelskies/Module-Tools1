@@ -74,7 +74,7 @@ Answer:Greyscale ranges 0x00 (black) → 0xFF (white)
 0x21 is low value, so it’s dark grey
 
 If reading the bytes 0xAA00FF as an RGB colour, as described in "Approaches for Representing Colors and Images", what colour would it mean?
-Answer:
+Answer:red + blue → purple/magenta
 
 If reading the bytes 0xAA00FF as a sequence of three one-byte decimal numbers, what decimal numbers would they be?
 Answer:
