@@ -80,4 +80,4 @@ If reading the bytes 0xAA00FF as a sequence of three one-byte decimal numbers, w
 AA → 170
 00 → 0
 FF → 255
-Answer: 170, 0, 255 ✅
+Answer: 170, 0, 255 
