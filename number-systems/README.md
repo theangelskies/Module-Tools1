@@ -8,7 +8,7 @@ Convert the decimal number 14 to binary.
 Answer:1110
 
 Convert the binary number 101101 to decimal:
-Answer:
+Answer:45
 
 Which is larger: 1000 or 0111?
 Answer:
