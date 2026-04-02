@@ -77,4 +77,7 @@ If reading the bytes 0xAA00FF as an RGB colour, as described in "Approaches for 
 Answer:red + blue = purple/magenta
 
 If reading the bytes 0xAA00FF as a sequence of three one-byte decimal numbers, what decimal numbers would they be?
-Answer:
+AA → 170
+00 → 0
+FF → 255
+Answer: 170, 0, 255 ✅
