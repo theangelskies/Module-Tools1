@@ -58,7 +58,7 @@ Answer:Hex is base 16, so each digit represents:
 Add them: 768 + 128 + 6 = 902
 
 Convert the hex number B to decimal.
-Answer:
+Answer:B in hex = 11 in decimal
 
 If reading the byte 0x21 as a number, what decimal number would it mean?
 Answer:
