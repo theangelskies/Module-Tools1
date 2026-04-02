@@ -39,7 +39,7 @@ How can you test if a binary number is a power of two (e.g. 1, 2, 4, 8, 16, ...)
 Answer:A binary number is a power of two if it has exactly one '1' bit and all other bits are '0'. In other words, a binary number that is a power of two will look like this: 1, 10, 100, 1000, etc.              
 
 Convert the decimal number 14 to hex.
-Answer:
+Answer:hexadecimal (hex) uses 16 symbols: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, A, B, C, D, E, F therefore 14 in decimal = E in hex
 
 Convert the decimal number 386 to hex.
 Answer:
