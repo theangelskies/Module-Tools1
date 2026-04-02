@@ -14,7 +14,7 @@ Which is larger: 1000 or 0111?
 Answer:1000 has a 1 in a higher position than 0111 → 1000 is larger
 
 Which is larger: 00100 or 01011?
-Answer:
+Answer:01011 has a higher leading 1 → 01011 is larger
 
 What is 10101 + 01010?
 Answer:
