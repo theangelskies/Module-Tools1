@@ -27,7 +27,7 @@ Answer:All 1s → 1111
 = 8 + 4 + 2 + 1 = 15
 
 How many bits would you need in order to store the numbers between 0 and 255 inclusive?
-Answer:
+Answer:255 = 11111111 → 8 bits
 
 How many bits would you need in order to store the numbers between 0 and 3 inclusive?
 Answer:
