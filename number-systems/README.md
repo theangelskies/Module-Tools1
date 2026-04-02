@@ -51,7 +51,11 @@ Write the remainders from top to bottom:
 1 → 8 → 2 = 182
 
 Convert the hex number 386 to decimal.
-Answer:
+Answer:Hex is base 16, so each digit represents:
+3 × 16² = 3 × 256 = 768
+8 × 16¹ = 8 × 16 = 128
+6 × 16⁰ = 6 × 1 = 6
+Add them: 768 + 128 + 6 = 902
 
 Convert the hex number B to decimal.
 Answer:
