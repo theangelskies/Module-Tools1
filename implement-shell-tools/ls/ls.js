@@ -6,17 +6,22 @@ const args = process.argv.slice(2);
 
 let dir = ".";
 let onePerLine = false;
+let showAll = false;
 
-// parse arguments
 for (const arg of args) {
   if (arg === "-1") {
     onePerLine = true;
+  } else if (arg === "-a") {
+    showAll = true;
   } else {
     dir = arg;
   }
 }
 
-const entries = fs.readdirSync(dir);
+let entries = fs.readdirSync(dir);
+if (!showAll) {
+  entries = entries.filter((name) => !name.startsWith("."));
+}
 
 for (const entry of entries) {
   if (onePerLine) {
@@ -24,4 +29,8 @@ for (const entry of entries) {
   } else {
     process.stdout.write(entry + "  ");
   }
+}
+
+if (!onePerLine) {
+  console.log();
 }
