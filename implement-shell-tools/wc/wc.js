@@ -2,16 +2,29 @@
 
 const fs = require("fs");
 
-const files = process.argv.slice(2);
+const args = process.argv.slice(2);
 
-if (files.length === 0) {
-  console.error("Usage: wc <file...>");
-  process.exit(1);
+let showLines = false;
+let showWords = false;
+let showBytes = false;
+
+const files = [];
+
+for (const arg of args) {
+  if (arg === "-l") {
+    showLines = true;
+  } else if (arg === "-w") {
+    showWords = true;
+  } else if (arg === "-c") {
+    showBytes = true;
+  } else {
+    files.push(arg);
+  }
 }
 
-let totalLines = 0;
-let totalWords = 0;
-let totalBytes = 0;
+if (!showLines && !showWords && !showBytes) {
+  showLines = showWords = showBytes = true;
+}
 
 for (const file of files) {
   const content = fs.readFileSync(file, "utf8");
@@ -20,13 +33,13 @@ for (const file of files) {
   const words = content.trim().split(/\s+/).filter(Boolean).length;
   const bytes = Buffer.byteLength(content, "utf8");
 
-  console.log(lines, words, bytes, file);
+  let output = [];
 
-  totalLines += lines;
-  totalWords += words;
-  totalBytes += bytes;
-}
+  if (showLines) output.push(lines);
+  if (showWords) output.push(words);
+  if (showBytes) output.push(bytes);
 
-if (files.length > 1) {
-  console.log(totalLines, totalWords, totalBytes, "total");
+  output.push(file);
+
+  console.log(output.join(" "));
 }
