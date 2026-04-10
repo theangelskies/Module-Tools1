@@ -4,10 +4,24 @@ const fs = require("fs");
 
 const args = process.argv.slice(2);
 
-const dir = args[0] || ".";
+let dir = ".";
+let onePerLine = false;
+
+// parse arguments
+for (const arg of args) {
+  if (arg === "-1") {
+    onePerLine = true;
+  } else {
+    dir = arg;
+  }
+}
 
 const entries = fs.readdirSync(dir);
 
 for (const entry of entries) {
-  console.log(entry);
+  if (onePerLine) {
+    console.log(entry);
+  } else {
+    process.stdout.write(entry + "  ");
+  }
 }
