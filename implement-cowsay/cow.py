@@ -23,5 +23,11 @@ def main():
     )
 
 
+    args = parser.parse_args()
+
+    text = " ".join(args.message)
+
+
+
 if __name__ == "__main__":
     main()
