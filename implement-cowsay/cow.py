@@ -15,7 +15,12 @@ def main():
         nargs="+",
         help="The message to say."
     )
-
+    parser.add_argument(
+        "--animal",
+        choices=animals,
+        default="cow",
+        help="The animal to be saying things."
+    )
 
 
 if __name__ == "__main__":
