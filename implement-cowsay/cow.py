@@ -27,7 +27,8 @@ def main():
 
     text = " ".join(args.message)
 
-
+    animal_function = getattr(cowsay, args.animal)
+    print(animal_function(text))
 
 if __name__ == "__main__":
     main()
