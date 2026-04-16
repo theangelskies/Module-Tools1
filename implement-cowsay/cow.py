@@ -10,5 +10,13 @@ def main():
         description="Make animals say things"
     )
 
- 
+    parser.add_argument(
+        "message",
+        nargs="+",
+        help="The message to say."
+    )
+
+
+
+if __name__ == "__main__":
     main()
