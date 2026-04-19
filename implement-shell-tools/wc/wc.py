@@ -1,12 +1,22 @@
 import sys
 
-file = sys.argv[1]
+files = sys.argv[1:]
 
-with open(file, "r") as f:
-    content = f.read()
+total_lines = total_words = total_chars = 0
 
-lines = content.count("\n")
-words = len(content.split())
-chars = len(content)
+for file in files:
+    with open(file, "r") as f:
+        content = f.read()
 
-print(lines, words, chars, file)
+    lines = content.count("\n")
+    words = len(content.split())
+    chars = len(content)
+
+    total_lines += lines
+    total_words += words
+    total_chars += chars
+
+    print(lines, words, chars, file)
+
+if len(files) > 1:
+    print(total_lines, total_words, total_chars, "total")
