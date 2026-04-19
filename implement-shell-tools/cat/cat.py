@@ -1,8 +1,23 @@
 import sys
 
-files = sys.argv[1:]
+args = sys.argv[1:]
+
+number = False
+files = []
+
+for arg in args:
+    if arg == "-n":
+        number = True
+    else:
+        files.append(arg)
+
+line_number = 1
 
 for file in files:
     with open(file, "r") as f:
         for line in f:
-            print(line, end="")
+            if number:
+                print(f"{line_number}\t{line}", end="")
+                line_number += 1
+            else:
+                print(line, end="")
