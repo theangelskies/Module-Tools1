@@ -1,57 +1,67 @@
 import sys
 
-args = sys.argv[1:]
+def wc(files, count_l, count_w, count_c):
+    total_l = total_w = total_c = 0
 
-count_lines = False
-count_words = False
-count_chars = False
+    for file in files:
+        try:
+            with open(file, "r") as f:
+                content = f.read()
 
-files = []
+            lines = content.count("\n")
+            words = len(content.split())
+            chars = len(content)
 
-for arg in args:
-    if arg == "-l":
-        count_lines = True
-    elif arg == "-w":
-        count_words = True
-    elif arg == "-c":
-        count_chars = True
-    else:
-        files.append(arg)
+            total_l += lines
+            total_w += words
+            total_c += chars
 
-if not (count_lines or count_words or count_chars):
-    count_lines = count_words = count_chars = True
+            output = []
+            if count_l:
+                output.append(str(lines))
+            if count_w:
+                output.append(str(words))
+            if count_c:
+                output.append(str(chars))
 
-total_l = total_w = total_c = 0
+            print(" ".join(output), file)
 
-for file in files:
-    with open(file, "r") as f:
-        content = f.read()
+        except FileNotFoundError:
+            print(f"wc: {file}: No such file")
 
-    lines = content.count("\n")
-    words = len(content.split())
-    chars = len(content)
+    if len(files) > 1:
+        output = []
+        if count_l:
+            output.append(str(total_l))
+        if count_w:
+            output.append(str(total_w))
+        if count_c:
+            output.append(str(total_c))
 
-    total_l += lines
-    total_w += words
-    total_c += chars
+        print(" ".join(output), "total")
 
-    output = []
-    if count_lines:
-        output.append(str(lines))
-    if count_words:
-        output.append(str(words))
-    if count_chars:
-        output.append(str(chars))
 
-    print(" ".join(output), file)
+def main():
+    args = sys.argv[1:]
 
-if len(files) > 1:
-    output = []
-    if count_lines:
-        output.append(str(total_l))
-    if count_words:
-        output.append(str(total_w))
-    if count_chars:
-        output.append(str(total_c))
+    count_l = count_w = count_c = False
+    files = []
 
-    print(" ".join(output), "total")
+    for arg in args:
+        if arg == "-l":
+            count_l = True
+        elif arg == "-w":
+            count_w = True
+        elif arg == "-c":
+            count_c = True
+        else:
+            files.append(arg)
+
+    if not (count_l or count_w or count_c):
+        count_l = count_w = count_c = True
+
+    wc(files, count_l, count_w, count_c)
+
+
+if __name__ == "__main__":
+    main()
